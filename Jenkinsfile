@@ -1,17 +1,16 @@
-node('REDHAT'){
-    stage('scm'){
-        git 'https://github.com/wakaleo/game-of-life.git'
+pipeline {
+   agent any 
+    stages {
+
+    stage("scm"){
+        steps{
+        git 'https://github.com/siva244/spring-petclinic.git'   
     }
-
-    stage('build'){
-        sh label: '', script: 'mvn clean package'
-
+}
+      stage("build"){
+        steps{
+        sh 'mvn package'  
     }
-
-    stage('postbuild'){
-        junit 'gameoflife-web/target/surefire-reports/*.xml'
-        archiveArtifacts 'gameoflife-web/target/*.war'
-        
-    }
-
+}
+}
 }
