@@ -1,16 +1,7 @@
-pipeline {
-   agent any 
-    stages {
-
+ node { 
     stage("scm"){
-        steps{
-        git 'https://github.com/siva244/game-of-life.git'   
-    }
-}
-      stage("build"){
-        steps{
-        sh 'mvn clean package'  
-    }
+       git branch: 'master', url: 'https://github.com/siva244/game-of-life.git'   
+
 }
 }
-}
+
