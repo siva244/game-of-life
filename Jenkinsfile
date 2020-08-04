@@ -1,8 +1,9 @@
 pipeline {
   agent any
   triggers { 
-     upstream(upstreamProjects: 'dummy',threshold: hydson.model.Result.SUCCESS)
-     }
+     upstream(upstreamProjects: "dummy", threshold: hudson.model.Result.SUCCESS)
+}
+     
    stages{
      stage('clone and compile'){
       steps {
