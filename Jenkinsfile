@@ -14,7 +14,7 @@ pipeline {
             steps {		
          sh 'mvn compile' 
 		 input 'continue to next step?'
-		 archiveArtifacts 'target/*.jar'
+		 archiveArtifacts 'target/*.war'
  
 }
 }
