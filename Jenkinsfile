@@ -12,7 +12,7 @@ pipeline {
 }
        stage('build'){
             steps {		
-         sh 'mvn compile' 
+         sh 'mvn clean package' 
 		 input 'continue to next step?'
 		 archiveArtifacts 'target/*.war'
  
