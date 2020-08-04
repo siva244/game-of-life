@@ -14,7 +14,7 @@ pipeline {
             steps {		
          sh 'mvn clean package' 
 		 input 'continue to next step?'
-		 archiveArtifacts 'target/*.war'
+		 archiveArtifacts 'pipeline-gol/*.war'
  
 }
 }
